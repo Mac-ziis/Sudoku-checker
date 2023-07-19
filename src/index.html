@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script type="text/javascript" src="bundle.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sudoku Legality Checker</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Sudoku Legality Checker</h1>
+    <div class="input-section">
+      <h2>Enter Sudoku Values</h2>
+      <table id="sudoku-grid">
+        <tr>
+          <td><input type="number" id="row1col1" min="1" max="9"></td>
+          <td><input type="number" id="row1col2" min="1" max="9"></td>
+          <td><input type="number" id="row1col3" min="1" max="9"></td>
+          <td><input type="number" id="row1col4" min="1" max="9"></td>
+          <td><input type="number" id="row1col5" min="1" max="9"></td>
+          <td><input type="number" id="row1col6" min="1" max="9"></td>
+          <td><input type="number" id="row1col7" min="1" max="9"></td>
+          <td><input type="number" id="row1col8" min="1" max="9"></td>
+          <td><input type="number" id="row1col9" min="1" max="9"></td>
+        </tr>
+        <tr>
+          <td><input type="number" id="row2col1" min="1" max="9"></td>
+          <td><input type="number" id="row2col2" min="1" max="9"></td>
+          <td><input type="number" id="row2col3" min="1" max="9"></td>
+          <td><input type="number" id="row2col4" min="1" max="9"></td>
+          <td><input type="number" id="row2col5" min="1" max="9"></td>
+          <td><input type="number" id="row2col6" min="1" max="9"></td>
+          <td><input type="number" id="row2col7" min="1" max="9"></td>
+          <td><input type="number" id="row2col8" min="1" max="9"></td>
+          <td><input type="number" id="row2col9" min="1" max="9"></td>
+        </tr>
+        <tr>
+          <td><input type="number" id="row3col1" min="1" max="9"></td>
+          <td><input type="number" id="row3col2" min="1" max="9"></td>
+          <td><input type="number" id="row3col3" min="1" max="9"></td>
+          <td><input type="number" id="row3col4" min="1" max="9"></td>
+          <td><input type="number" id="row3col5" min="1" max="9"></td>
+          <td><input type="number" id="row3col6" min="1" max="9"></td>
+          <td><input type="number" id="row3col7" min="1" max="9"></td>
+          <td><input type="number" id="row3col8" min="1" max="9"></td>
+          <td><input type="number" id="row3col9" min="1" max="9"></td>
+        </tr>
+        <tr>
+          <td><input type="number" id="row4col1" min="1" max="9"></td>
+          <td><input type="number" id="row4col2" min="1" max="9"></td>
+          <td><input type="number" id="row4col3" min="1" max="9"></td>
+          <td><input type="number" id="row4col4" min="1" max="9"></td>
+          <td><input type="number" id="row4col5" min="1" max="9"></td>
+          <td><input type="number" id="row4col6" min="1" max="9"></td>
+          <td><input type="number" id="row4col7" min="1" max="9"></td>
+          <td><input type="number" id="row4col8" min="1" max="9"></td>
+          <td><input type="number" id="row4col9" min="1" max="9"></td>
+        </tr>
+        <tr>
+          <td><input type="number" id="row5col1" min="1" max="9"></td>
+          <td><input type="number" id="row5col2" min="1" max="9"></td>
+          <td><input type="number" id="row5col3" min="1" max="9"></td>
+          <td><input type="number" id="row5col4" min="1" max="9"></td>
+          <td><input type="number" id="row5col5" min="1" max="9"></td>
+          <td><input type="number" id="row5col6" min="1" max="9"></td>
+          <td><input type="number" id="row5col7" min="1" max="9"></td>
+          <td><input type="number" id="row5col8" min="1" max="9"></td>
+          <td><input type="number" id="row5col9" min="1" max="9"></td>
+        </tr>
+        <tr>
+          <td><input type="number" id="row6col1" min="1" max="9"></td>
+          <td><input type="number" id="row6col2" min="1" max="9"></td>
+          <td><input type="number" id="row6col3" min="1" max="9"></td>
+          <td><input type="number" id="row6col4" min="1" max="9"></td>
+          <td><input type="number" id="row6col5" min="1" max="9"></td>
+          <td><input type="number" id="row6col6" min="1" max="9"></td>
+          <td><input type="number" id="row6col7" min="1" max="9"></td>
+          <td><input type="number" id="row6col8" min="1" max="9"></td>
+          <td><input type="number" id="row6col9" min="1" max="9"></td>
+        </tr>
+        <tr>
+          <td><input type="number" id="row7col1" min="1" max="9"></td>
+          <td><input type="number" id="row7col2" min="1" max="9"></td>
+          <td><input type="number" id="row7col3" min="1" max="9"></td>
+          <td><input type="number" id="row7col4" min="1" max="9"></td>
+          <td><input type="number" id="row7col5" min="1" max="9"></td>
+          <td><input type="number" id="row7col6" min="1" max="9"></td>
+          <td><input type="number" id="row7col7" min="1" max="9"></td>
+          <td><input type="number" id="row7col8" min="1" max="9"></td>
+          <td><input type="number" id="row7col9" min="1" max="9"></td>
+        </tr>
+        <tr>
+          <td><input type="number" id="row8col1" min="1" max="9"></td>
+          <td><input type="number" id="row8col2" min="1" max="9"></td>
+          <td><input type="number" id="row8col3" min="1" max="9"></td>
+          <td><input type="number" id="row8col4" min="1" max="9"></td>
+          <td><input type="number" id="row8col5" min="1" max="9"></td>
+          <td><input type="number" id="row8col6" min="1" max="9"></td>
+          <td><input type="number" id="row8col7" min="1" max="9"></td>
+          <td><input type="number" id="row8col8" min="1" max="9"></td>
+          <td><input type="number" id="row8col9" min="1" max="9"></td>
+        </tr>
+        <tr>
+          <td><input type="number" id="row9col1" min="1" max="9"></td>
+          <td><input type="number" id="row9col2" min="1" max="9"></td>
+          <td><input type="number" id="row9col3" min="1" max="9"></td>
+          <td><input type="number" id="row9col4" min="1" max="9"></td>
+          <td><input type="number" id="row9col5" min="1" max="9"></td>
+          <td><input type="number" id="row9col6" min="1" max="9"></td>
+          <td><input type="number" id="row9col7" min="1" max="9"></td>
+          <td><input type="number" id="row9col8" min="1" max="9"></td>
+          <td><input type="number" id="row9col9" min="1" max="9"></td>
+        </tr>
+      </table>
+    </div>
+    <button id="check-button">Check Legality</button>
+    <div id="result"></div>
+  </div>
+</body>
+</html>
